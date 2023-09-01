@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/to-lower-case/submissions/1032991181/
+// https://leetcode.com/problems/to-lower-case/
 #include <iostream>
 using namespace std;
 string toLowerCase(string str)
