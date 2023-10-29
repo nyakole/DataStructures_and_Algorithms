@@ -2,39 +2,25 @@
 #include <iostream>
 #include <string>
 using namespace std;
-string reverseWords(string str)
-{
-    int start = 0;
-    for (int i = 0; i <= str.size(); i++)
-    {
-
-        // If the current word has ended
-        if (str[i] == ' ' || i == str.size())
-        {
-
-            // Pointer to the last character
-            // of the current word
-            int end = i - 1;
-
-            // Reverse the current word
-            while (start < end)
-            {
-                swap(str[start], str[end]);
-                start++;
-                end--;
+string isBalanced(string s) {
+    int i=-1;
+        for(auto& ch:s){
+            if(ch=='(' || ch=='{' || ch=='[')
+                s[++i]=ch;
+            else{
+                if(i>=0 && ((s[i]=='(' && ch==')') || (s[i]=='{' && ch=='}') || (s[i]=='[' && ch==']')))
+                    i--;
+                else
+                    return "NO";
             }
-
-            // Pointer to the first character
-            // of the next word
-            start = i + 1;
         }
-    }
-    return str;
+        return "YES";
+
 }
 int main()
 {
     string str;
     getline(cin, str);
-    cout << reverseWords(str);
+    cout << isBalanced(str);
     return 0;
 }

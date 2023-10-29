@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-peak-element/
+// https://leetcode.com/problems/search-in-rotated-sorted-array/
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -11,7 +11,7 @@ int search(vector<int> &nums, int target)
     int low = 0;
     int high = n - 1;
     if (n == 1)
-        return 0;
+        return -1;
     while (low <= high)
     {
         int mid = low + (high - low) / 2;
